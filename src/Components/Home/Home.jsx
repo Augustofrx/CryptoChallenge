@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { CryptoFetch } from "../CryptoFetch/CryptoFetch";
-import { Navbar } from "../Navbar/NavBar";
+import { NavBar } from "../NavBar/NavBar";
 import USDTLOGO from "../../Assets/usdt-logo.png";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -36,7 +36,7 @@ export default function Home() {
       <div className={styles.titleContainer}>
         <h1>Crypto Challenge</h1>
       </div>
-      <Navbar />
+      <NavBar />
       <div className={styles.selectTokenDiv}>
         <ion-icon name="chevron-down-outline"></ion-icon>
         <label className={styles.selectTokenLabel} for="selectToken">
