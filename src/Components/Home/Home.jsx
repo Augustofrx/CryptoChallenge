@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { CryptoFetch } from "../CryptoFetch/CryptoFetch";
-import { Navbar } from "../NavBar/NavBar";
 import USDTLOGO from "../../Assets/usdt-logo.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useCallback } from "react";
 import axios from "axios";
+import Navbar from "../NavBar/NavBar";
 
 export default function Home() {
   const [token, setToken] = useState("WETH");
