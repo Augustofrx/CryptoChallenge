@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './NavBar.module.css'
 
-export const NavBar = () => {
+export const Navbar = () => {
   return (
     <div className={styles.navContainer}>
         <div className={styles.depositar}>
