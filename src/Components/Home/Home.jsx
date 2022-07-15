@@ -38,7 +38,7 @@ export default function Home() {
       </div>
     <NavBar/>
       <div className={styles.selectTokenDiv}>
-        <ion-icon name="chevron-down-outline"></ion-icon>
+        {/* <ion-icon name="chevron-down-outline"></ion-icon> */}
         <label className={styles.selectTokenLabel} for="selectToken">
           DEPOSITA EN
         </label>
