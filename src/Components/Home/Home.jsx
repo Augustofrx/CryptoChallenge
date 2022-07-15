@@ -5,8 +5,8 @@ import USDTLOGO from "../../Assets/usdt-logo.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useCallback } from "react";
+import { NavBar } from "../Navbar/NavBar";
 import axios from "axios";
-import Navbar from "../NavBar/NavBar";
 
 export default function Home() {
   const [token, setToken] = useState("WETH");
@@ -36,7 +36,7 @@ export default function Home() {
       <div className={styles.titleContainer}>
         <h1>Crypto Challenge</h1>
       </div>
-      <Navbar />
+    <NavBar/>
       <div className={styles.selectTokenDiv}>
         <ion-icon name="chevron-down-outline"></ion-icon>
         <label className={styles.selectTokenLabel} for="selectToken">
