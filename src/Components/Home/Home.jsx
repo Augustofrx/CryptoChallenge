@@ -11,6 +11,7 @@ import axios from "axios";
 export default function Home() {
   const [token, setToken] = useState("WETH");
   const [price, setPrice] = useState(0);
+  
   const selectHandleChange = (e) => {
     setToken(e.target.value);
   };
@@ -33,9 +34,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.titleContainer}>
-        <h1>Crypto Challenge</h1>
-      </div>
     <NavBar/>
       <div className={styles.selectTokenDiv}>
         <label className={styles.selectTokenLabel} for="selectToken">
@@ -51,6 +49,7 @@ export default function Home() {
         </select>
         <div className={styles.priceContainer}>
           <h3>{price ? "Precio: " + 1 / price : "Cargando..."} </h3>
+          <button className={styles.addToFavsBtn}>Añadir Token a favoritos</button>
         </div>
         <div className={styles.fullCashInput}>
           <div className={styles.Symbol}>
