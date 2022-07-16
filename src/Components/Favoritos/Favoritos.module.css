@@ -55,7 +55,7 @@
 
   .deleteBtn {
     position: relative;
-    left: 9.8em;
+    left: 9.5em;
     top: .2em;
     height: 1em;
     width: 1em;
@@ -69,8 +69,4 @@
     font-family: var(--font-ubuntu);
     font-weight: 700;
     cursor: pointer;
-  }
-
-  .noTokensFound {
-    z-index: 4;
   }
