@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { CryptoFetch } from "../CryptoFetch/CryptoFetch";
-import USDTLOGO from "../../Assets/usdt-logo.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useCallback } from "react";
@@ -9,7 +8,6 @@ import { NavBar } from "../Navbar/NavBar";
 import { addFavorites } from "../../Redux/actions/actions";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-
 
 export default function Home() {
   const [token, setToken] = useState("WETH");

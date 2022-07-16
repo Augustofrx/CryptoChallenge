@@ -50,15 +50,15 @@
   }
 
   .tokenData {
-    width: 13em;
+    width: 100%;
   }
 
   .deleteBtn {
     position: relative;
-    left: 9.5em;
     top: .2em;
     height: 1em;
     width: 1em;
+    right: .5em;
   }
 
   .deleteBtn button {

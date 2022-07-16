@@ -11,7 +11,6 @@ function Favoritos() {
         <h1>Tokens favoritos</h1>
   <FavoritosCard/>
     </div>
-
     </div>
   )
 }
