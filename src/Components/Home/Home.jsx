@@ -6,12 +6,16 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useCallback } from "react";
 import { NavBar } from "../Navbar/NavBar";
+import { addFavorites } from "../../Redux/actions/actions";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+
 
 export default function Home() {
   const [token, setToken] = useState("WETH");
   const [price, setPrice] = useState(0);
-  
+  const dispatch = useDispatch();
+
   const selectHandleChange = (e) => {
     setToken(e.target.value);
   };
@@ -32,16 +36,23 @@ export default function Home() {
     }
   }, [token, tokenPrice]);
 
+  function handleAddFavorites(e) {
+    e.preventDefault();
+    dispatch(addFavorites({ name: token, price: 1 / price }));
+  }
+
   return (
     <div className={styles.container}>
-    <NavBar/>
+      <NavBar />
       <div className={styles.selectTokenDiv}>
-        <label className={styles.selectTokenLabel} for="selectToken">
-          DEPOSITA EN
+        <label className={styles.selectTokenLabel} htmlFor="selectToken">
+          LISTA DE TOKENS
         </label>
         <select
           className={styles.selectToken}
-          onChange={selectHandleChange}
+          onChange={(e) => {
+            selectHandleChange(e);
+          }}
           name="selectToken"
           id="selectToken"
         >
@@ -49,9 +60,16 @@ export default function Home() {
         </select>
         <div className={styles.priceContainer}>
           <h3>{price ? "Precio: " + 1 / price : "Cargando..."} </h3>
-          <button className={styles.addToFavsBtn}>Añadir Token a favoritos</button>
+          <button
+            onClick={(e) => {
+              handleAddFavorites(e);
+            }}
+            className={styles.addToFavsBtn}
+          >
+            Añadir Token a favoritos
+          </button>
         </div>
-        <div className={styles.fullCashInput}>
+        {/* <div className={styles.fullCashInput}>
           <div className={styles.Symbol}>
             <img src={USDTLOGO} alt="DaiLogo" />
             <span>USDT</span>
@@ -61,7 +79,7 @@ export default function Home() {
         <label className={styles.cashLabel} htmlFor="">
           MONTO
         </label>
-        <button className={styles.depositarBtn}>Depositar</button>
+        <button className={styles.depositarBtn}>Depositar</button> */}
       </div>
     </div>
   );

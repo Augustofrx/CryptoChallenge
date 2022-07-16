@@ -13,8 +13,9 @@
   .favContainer {
     width: 45%;
     height: 100%;
+    margin-top: 1em;
     margin-bottom: 1em;
-    border-radius: .5em;
+    border-radius: 1em;
     background-color: rgba(240, 248, 255, 0.322);
     display: flex;
     align-items: center;
@@ -27,7 +28,7 @@
     font-weight: 500;
 }
 
-  .favToken {
+  .favCardContainer {
     width: 90%;
     height: 5em;
     background-color: rgba(240, 248, 255, 0.275);
@@ -35,22 +36,29 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    margin: .5em;
   }
 
- .favToken h2 {
+ .favCardContainer h2 {
     margin: .3em;
     font-family: var(--font-ubuntu);
   }
 
-  .favToken h4 {
+  .favCardContainer h4 {
     margin: .5em;
     font-family: var(--font-ubuntu);
+  }
+
+  .tokenData {
+    width: 13em;
   }
 
   .deleteBtn {
     position: relative;
     left: 9.8em;
     top: .2em;
+    height: 1em;
+    width: 1em;
   }
 
   .deleteBtn button {
@@ -60,4 +68,9 @@
     color: red;
     font-family: var(--font-ubuntu);
     font-weight: 700;
+    cursor: pointer;
+  }
+
+  .noTokensFound {
+    z-index: 4;
   }

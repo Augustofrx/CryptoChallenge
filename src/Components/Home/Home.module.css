@@ -23,8 +23,8 @@
 .selectTokenLabel {
   color: rgb(225, 225, 225);
   position: relative;
-  right: 8em;
-  bottom: 4.8em;
+  right: 0em;
+  bottom: 10em;
   z-index: 2;
   font-weight: 500;
   font-family: "Ubuntu", sans-serif;
@@ -38,13 +38,13 @@
   color: white;
   height: 3em;
   width: 19em;
-  left: 4.05em;
+  left: 0em;
   align-items: center;
   margin: 1em 0 0 0;
   border-radius: 0.5rem;
   padding: 8px 12px;
   position: relative;
-  bottom: 10em;
+  bottom: 14em;
   font-weight: 500;
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
@@ -67,7 +67,7 @@
   font-family: "Ubuntu", sans-serif;
   color: white;
   position: absolute;
-  top: 9em;
+  top: 14em;
   display: flex;
   justify-content: center;
   align-items: center;
