@@ -45,7 +45,9 @@ export default function Home() {
     } else if (favoritos3.length < 1 && token !== favoritos1[0].name && token !== favoritos2[0].name ) {
       dispatch(addFavorites3({name: token}))
     } else {
-      Swal.fire('Ya tienes este token en favoritos')
+      Swal.fire(  {icon: 'error',
+      title: 'Oops...',
+      text: 'Este token ya pertenece a tus favoritos'})
     }
   }
 
