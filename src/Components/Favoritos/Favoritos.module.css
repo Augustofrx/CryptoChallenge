@@ -52,18 +52,29 @@
   width: 100%;
 }
 
-.tokenPrecio img {
-  position: absolute;
-  top: 14em;
-  right: 42em;
-  width: 2em;
-  height: 2em;
+.tokenData h2 {
+  color: rgb(245, 245, 245);
+  letter-spacing: 2px;
+}
+
+.tokenPrecio1 img, .tokenPrecio2 img, .tokenPrecio3 img {
+  position: relative;
+  bottom: .2em;
+  left: .3em;
+  width: 1.5em;
+  height: 1.5em;
   margin: 0;
+}
+
+.tokenPrecio1, .tokenPrecio2, .tokenPrecio3 {
+  color: #3e0a79;
+  display: flex;
+  justify-content: center;
 }
 
 .deleteBtn {
   position: relative;
-  top: 0.2em;
+  top: 0.1em;
   height: 1em;
   width: 1em;
   right: 0.5em;
@@ -73,8 +84,19 @@
   font-size: 16px;
   border-radius: 0.3em;
   border: none;
-  color: red;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
   font-family: var(--font-ubuntu);
+  background-color: #7757a4;
   font-weight: 700;
   cursor: pointer;
+  transition: .2s;
 }
+
+.deleteBtn button:hover {
+  background-color: rgb(253, 52, 52);
+}
+
+
+
+
