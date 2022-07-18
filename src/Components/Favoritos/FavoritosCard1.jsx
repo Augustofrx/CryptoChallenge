@@ -28,22 +28,21 @@ function FavoritosCard1() {
     });
   }, []);
 
-
   useEffect(() => {
-    if(token !== ""){
-      let timer = setInterval(() => tokenPrice(token), 10000);
+    if (token !== "") {
+      let timer = setInterval(() => tokenPrice(token), 30000);
       return () => clearInterval(timer);
     }
   }, [token, tokenPrice]);
 
-  console.log("Precio: "+ 1/price)
+  console.log("Precio: " + 1 / price);
 
   const handleDelete = (t) => {
     let listFiltered = list1.filter((token) => token.name !== t.name);
     setList1(listFiltered);
     dispatch(deleteFavorites1(listFiltered));
-    setToken('')
-    setPrice(0)
+    setToken("");
+    setPrice(0);
   };
 
   useEffect(() => {

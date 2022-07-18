@@ -30,7 +30,7 @@ function FavoritosCard2() {
 
   useEffect(() => {
     if (token !== "") {
-      const timer = setInterval(() => tokenPrice(token), 10000);
+      const timer = setInterval(() => tokenPrice(token), 30000);
       return () => clearInterval(timer);
     }
   }, [token, tokenPrice]);
