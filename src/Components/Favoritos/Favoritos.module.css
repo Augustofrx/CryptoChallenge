@@ -29,7 +29,7 @@
 
 .favCardContainer {
   width: 90%;
-  height: 5em;
+  height: 9em;
   background-color: rgba(240, 248, 255, 0.275);
   border-radius: 0.5em;
   text-align: center;
@@ -57,19 +57,89 @@
   letter-spacing: 2px;
 }
 
-.tokenPrecio1 img, .tokenPrecio2 img, .tokenPrecio3 img {
+.tokenPrecio1 img,
+.tokenPrecio2 img,
+.tokenPrecio3 img {
   position: relative;
-  bottom: .2em;
-  left: .3em;
+  bottom: 0.2em;
+  left: 0.3em;
   width: 1.5em;
   height: 1.5em;
   margin: 0;
 }
 
-.tokenPrecio1, .tokenPrecio2, .tokenPrecio3 {
+.tokenPromedio1 img,
+.tokenPromedio2 img,
+.tokenPromedio3 img {
+  position: relative;
+  top: 0em;
+  left: 0em;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0;
+}
+
+.tokenPromedio1,
+.tokenPromedio2,
+.tokenPromedio3 {
+  margin: 0;
+  color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  background-color: #3e0a79;
+  width: 90%;
+  border-radius: 0.2em;
+  position: relative;
+  left: 2em;
+}
+
+.tokenPrecio1,
+.tokenPrecio2,
+.tokenPrecio3 {
   color: #3e0a79;
   display: flex;
   justify-content: center;
+}
+
+.comprarVenderDiv1,
+.comprarVenderDiv2,
+.comprarVenderDiv3 {
+  margin-top: 0.8em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.comprarBtn,
+.venderBtn {
+  margin: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  color: white;
+  font-family: var(--font-ubuntu);
+  font-size: 14px;
+  padding: 0.3em 0.3em;
+}
+
+.comprarBtn {
+  background-color: rgb(29, 194, 0);
+}
+
+.comprarBtn:disabled {
+  background-color: rgb(153, 194, 146);
+}
+
+.comprarBtn:enabled,
+.venderBtn:enabled {
+  cursor: pointer;
+}
+
+.venderBtn {
+  background-color: rgb(255, 16, 16);
+}
+
+.venderBtn:disabled {
+  background-color: rgb(225, 151, 151);
 }
 
 .deleteBtn {
@@ -90,13 +160,23 @@
   background-color: #7757a4;
   font-weight: 700;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .deleteBtn button:hover {
   background-color: rgb(253, 52, 52);
 }
 
-
-
-
+@media (max-width: 450px) {
+  .favContainer {
+    width: 90%;
+    margin-top: .2em;
+  }
+  .tokenPromedio1,
+.tokenPromedio2,
+.tokenPromedio3 {
+  width: 100%;
+  left: .3em;
+  padding: .2em .2em;
+}
+}

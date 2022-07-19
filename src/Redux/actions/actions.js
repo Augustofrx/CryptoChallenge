@@ -37,3 +37,26 @@ export function deleteFavorites3(payload) {
         payload
     }
 }
+
+export function addPriceList1(payload) {
+    return {
+        type: "ADD_PRICE_LIST1",
+        payload
+    }
+}
+
+
+export function addPriceList2(payload) {
+    return {
+        type: "ADD_PRICE_LIST2",
+        payload
+    }
+}
+
+
+export function addPriceList3(payload) {
+    return {
+        type: "ADD_PRICE_LIST3",
+        payload
+    }
+}

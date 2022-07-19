@@ -2,17 +2,19 @@ import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./Favoritos.module.css";
-import { deleteFavorites1 } from "../../Redux/actions/actions";
+import { deleteFavorites1, addPriceList1} from "../../Redux/actions/actions";
 import { useDispatch } from "react-redux";
 import Loader from "../../Assets/LoadingGif.gif";
 import axios from "axios";
 
 function FavoritosCard1() {
   let favoritos1 = useSelector((state) => state.favorites1);
+  let priceList = useSelector((state) => state.priceList1)
   let [list1, setList1] = useState();
   const dispatch = useDispatch();
   const [token, setToken] = useState();
   const [price, setPrice] = useState(0);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   useEffect(() => {
     if (favoritos1.length > 0) {
@@ -20,22 +22,53 @@ function FavoritosCard1() {
     }
   }, [favoritos1]);
 
-  const tokenPrice = useCallback((tokenId) => {
-    axios(
-      `https://api.0x.org/swap/v1/price?sellToken=${tokenId}&buyToken=USDT&sellAmount=1000000000000000000`
-    ).then((res) => {
-      setPrice(res.data.price);
-    });
-  }, []);
+  const tokenPrice = useCallback(
+    (tokenId) => {
+      axios(
+        `https://api.0x.org/swap/v1/price?sellToken=${tokenId}&buyToken=USDT&sellAmount=1000000000000000000`
+      ).then((res) => {
+        if (priceList.length === 5) {
+          priceList.shift();
+          dispatch(addPriceList1(1 / res.data.price));
+        } else {
+          dispatch(addPriceList1(1 / res.data.price));
+        }
+        setPrice(res.data.price);
+        console.log(priceList);
+      });
+    },
+    [dispatch, priceList]
+  );
+
+  let promedio = useCallback(() => {
+    if (priceList.length === 5) {
+      let sum = 0;
+      for (let i = 0; i < priceList.length; i++) {
+        sum += priceList[i];
+      }
+      console.log(sum + " sum");
+      let resultado = sum / 5;
+      return resultado;
+    }
+  }, [priceList]);
 
   useEffect(() => {
-    if (token !== "") {
-      let timer = setInterval(() => tokenPrice(token), 30000);
-      return () => clearInterval(timer);
+    if (priceList.length === 5) {
+      promedio();
     }
-  }, [token, tokenPrice]);
+  }, [priceList, promedio]);
 
-  console.log("Precio: " + 1 / price);
+  useEffect(() => {
+    if (token) {
+      if (firstLoad === true) {
+        tokenPrice(token);
+        setFirstLoad(false);
+      } else {
+        let timer = setInterval(() => tokenPrice(token), 30000);
+        return () => clearInterval(timer);
+      }
+    }
+  }, [firstLoad, token, tokenPrice]);
 
   const handleDelete = (t) => {
     let listFiltered = list1.filter((token) => token.name !== t.name);
@@ -58,6 +91,14 @@ function FavoritosCard1() {
               <h4 className={styles.tokenPrecio1}>
                 Precio: {price ? 1 / price : <img src={Loader} alt="Loader" />}
               </h4>
+              <h5 className={styles.tokenPromedio1}>
+                Precio promedio:{" "}
+                {promedio() ? promedio() : <img src={Loader} alt="Loader" />}
+              </h5>
+              <div className={styles.comprarVenderDiv1}>
+              {price <= promedio() ?  <button className={styles.comprarBtn}>Comprar</button> :<button disabled={true} className={styles.comprarBtn}>Comprar</button> }
+               {price >= promedio() ? <button className={styles.venderBtn}>Vender</button> : <button disabled={true} className={styles.venderBtn}>Vender</button>}
+              </div>
             </div>
             <div className={styles.deleteBtn}>
               <button onClick={() => handleDelete(t)}>X</button>

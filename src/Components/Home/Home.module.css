@@ -96,99 +96,7 @@
   cursor: pointer;
 }
 
-.selectTokenDiv ion-icon {
-  color: white;
-  position: absolute;
-  z-index: 3;
-  top: 4.6em;
-  right: 8.5em;
-}
 
-.fullCashInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Symbol {
-  width: 8em;
-  height: 3.63em;
-  right: 1em;
-  top: 4.001em;
-  position: relative;
-  z-index: 3;
-  margin: 0;
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  background-color: #4a3171c9;
-  color: #ffffff;
-  backdrop-filter: blur(3px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.Symbol span,
-.Symbol img {
-  margin: 0;
-}
-
-.Symbol img {
-  width: 1.5em;
-  height: 1.5em;
-  position: relative;
-  right: 2.2em;
-}
-
-.Symbol span {
-  margin-left: 1.2em;
-  position: absolute;
-  font-size: 28px;
-  font-weight: 500;
-  font-family: "Ubuntu", sans-serif;
-}
-.cashLabel {
-  color: rgb(225, 225, 225);
-  position: relative;
-  right: 13em;
-  bottom: 1em;
-  z-index: 2;
-  font-weight: 500;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-}
-
-.cashInput {
-  text-align: center;
-  border: none;
-  margin: 0;
-  background-color: #4a3171c9;
-  backdrop-filter: blur(3px);
-  border-radius: 0.5rem;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  height: 3.5em;
-  width: 20em;
-  position: relative;
-  top: 4em;
-  appearance: text;
-  color: white;
-  text-align: end;
-  padding-right: 1em;
-  right: 1em;
-  outline: none;
-  caret-color: aqua;
-}
-
-.cashInput::placeholder {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
-}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -223,19 +131,32 @@ input[type="number"] {
 
 @media (min-width: 1900px) {
   .selectTokenDiv {
-    right: 30em; 
-  }
-
-  .selectTokenDiv ion-icon {
-    top: 12.7em;
-    right: 17.5em;
-  }
-
-  .Symbol {
-    right: 15px;
+    right: 0em; 
   }
 
   .priceContainer  {
 top: 20em;
   }
+
+  .priceContainer {
+    width: 30em;
+    height: 8em;
+  }
+
+  .priceContainer h3 {
+    font-size: 18px;
+  }
+  .selectToken {
+    width: 30em;
+   }
+
+   .addToFavsBtn {
+    font-size: 18px;
+    width: 25em;
+   }
+
+   
+.selectToken option {
+  font-size: 20px;
+}
 }

@@ -18,9 +18,6 @@ export const NavBar = () => {
             <button>Favoritos</button>
           </Link>
         </div>
-        <div className={styles.cuenta}>
-          <button>Cuenta</button>
-        </div>
       </div>
       </div>
   );
