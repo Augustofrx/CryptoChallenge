@@ -11,7 +11,7 @@ function Favoritos() {
   Swal.fire({
     icon: "warning",
     title: "Atención",
-    text: "La primera vez que ingreses a la sección favoritos, el precio promedio puede tomar hasta 2 minutos en ser calculado"
+    text: "La primera vez que agregues un token a la sección favoritos, el precio promedio puede tomar hasta 2 minutos en ser calculado"
   });
   return (
     <div className={styles.container}>

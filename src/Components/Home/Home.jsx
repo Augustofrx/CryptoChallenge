@@ -16,7 +16,7 @@ export default function Home() {
   const favoritos1 = useSelector((state) => state.favorites1);
   const favoritos2 = useSelector((state) => state.favorites2);
   const favoritos3 = useSelector((state) => state.favorites3);
-  const [token, setToken] = useState("WETH");
+  const [token, setToken] = useState("ETH");
   const [price, setPrice] = useState(0);
   const dispatch = useDispatch();
 
