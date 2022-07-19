@@ -34,7 +34,7 @@ function FavoritosCard2() {
           dispatch(addPriceList2(1 / res.data.price));
         }
         setPrice(res.data.price);
-        console.log(priceList2);
+  
       });
     },
     [dispatch, priceList2]
@@ -46,7 +46,7 @@ function FavoritosCard2() {
       for (let i = 0; i < priceList2.length; i++) {
         sum += priceList2[i];
       }
-      console.log(sum + " sum");
+ 
       let resultado = sum / 5;
       return resultado;
     }
