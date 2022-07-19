@@ -52,13 +52,36 @@ export default function Home() {
       token !== favoritos2[0].name
     ) {
       dispatch(addFavorites3({ name: token }));
-    } else {
+    } else if (
+      favoritos1.length === 1 &&
+      favoritos2.length === 1 &&
+      favoritos3.length === 1 && (
+        token === favoritos1[0].name ||
+        token === favoritos2[0].name ||
+        token === favoritos3[0].name
+      )
+    ) {
       Swal.fire({
         icon: "warning",
         title: "Este token ya pertenece a tus favoritos",
       });
-    }
+     } else if (
+      favoritos1.length === 1 &&
+      favoritos2.length === 1 &&
+      favoritos3.length === 1 && (
+        token !== favoritos1[0].name ||
+        token !== favoritos2[0].name ||
+        token !== favoritos3[0].name
+     )) {
+          Swal.fire({
+        icon: "error",
+        title: "Ya posees 3 tokens en favoritos",
+      });
+     }
+
   }
+
+  console.log(token)
 
   return (
     <div className={styles.container}>
