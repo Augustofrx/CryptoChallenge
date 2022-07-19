@@ -39,11 +39,20 @@ export const CryptoFetch = () => {
 
   return tokenInfo
     ? tokenInfo.map((t, index) => {
+        if (
+          t.symbol === "DAI" ||
+          t.symbol === "WBTC" ||
+          t.symbol === "WETH" ||
+          t.symbol === "AAVE" ||
+          t.symbol === "MATIC" ||
+          t.symbol === "BUSD"
+        ) {
           return (
             <option value={t.symbol} key={index} id="optionToken">
               {t.symbol}
             </option>
-          ); 
+          );
+        }
       })
     : "No hay tokens";
 

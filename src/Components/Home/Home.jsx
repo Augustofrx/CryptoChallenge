@@ -53,9 +53,9 @@ export default function Home() {
     ) {
       dispatch(addFavorites3({ name: token }));
     } else if (
-      favoritos1.length === 1 &&
-      favoritos2.length === 1 &&
-      favoritos3.length === 1 && (
+      (favoritos1.length === 1 ||
+      favoritos2.length === 1 ||
+      favoritos3.length === 1) && (
         token === favoritos1[0].name ||
         token === favoritos2[0].name ||
         token === favoritos3[0].name
